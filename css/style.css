@@ -19,7 +19,7 @@
 
     --fs-h1: 4rem;
     --fs-h2: 3.25rem;
-    --fs-h3: 2.25rem;
+    --fs-h3: 2.5rem;
     --hs-h4: 2rem;
     --fs-body: 1.5rem;
 
@@ -33,7 +33,7 @@
     :root {
         --fs-hl: 4.5rem;
         --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
+        --fs-h3: 2rem;
         --fs-h4: 1.25rem;
         --fs-body: 1.125rem;
     }
@@ -326,12 +326,16 @@ header {
 }
 
 .skills {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 .skill {
-    max-width: 500px;
+    width: 33.33%;
     margin: 0 auto;
+}
+
+.skill h4 {
+    color: var(--clr-accent);
 }
 
 @media (min-width: 800px) {
@@ -343,7 +347,7 @@ header {
     }
 
     .skill + .skill {
-        margin-left: 2em;
+        margin-left: 4em;
     }
 }
 
@@ -365,6 +369,9 @@ header {
 .portfolio__project {
     background: var(--clr-accent);
     overflow: hidden;
+    text-decoration: none;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .portfolio__img {
@@ -373,15 +380,22 @@ header {
         opacity 250ms linear;
 }
 
-.pofrolio__project:focus {
+.portfolio__project:focus {
     position: relative;
     z-index: 2;
 }
 
 .portfolio__img:hover,
 .portfolio__project:focus .portfolio__img {
-    transform: scale(1.2);
     opacity: .75;
+}
+
+.portfolio__title {
+    margin-top: 1em;
+}
+
+.portfolio__title:hover {
+    color: var(--clr-dark);
 }
 
 /* About Me */
