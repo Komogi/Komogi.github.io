@@ -19,18 +19,22 @@
 
     --fs-h1: 4rem;
     --fs-h2: 3.25rem;
-    --fs-h2: 2.25rem;
+    --fs-h3: 2.5rem;
+    --hs-h4: 2rem;
     --fs-body: 1.5rem;
 
     --bs: 0.25em 0.25em .75em rgba(0, 0, 0, .25), 
           0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+
+    --mw-large: 1200px;
 }
 
 @media (min-width: 800px) {
     :root {
         --fs-hl: 4.5rem;
         --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
+        --fs-h3: 2rem;
+        --fs-h4: 1.25rem;
         --fs-body: 1.125rem;
     }
 }
@@ -70,6 +74,7 @@ strong {
 
 /* Buttons */
 
+/*
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
@@ -87,6 +92,7 @@ strong {
 .btn:hover {
     transform: scale(1.1);
 }
+*/
 
 /* Typography */
 
@@ -107,6 +113,10 @@ h2 {
 
 h3 {
     font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
 }
 
 .section__title {
@@ -295,9 +305,7 @@ header {
 
 .my-skills {
     background-color: var(--clr-dark);
-    background-image: url(../img/profilepicture.jpg);
     background-size: cover;
-    background-blend-mode: multiply;
     color: var(--clr-light);
     text-align: center;
 }
@@ -318,24 +326,28 @@ header {
 }
 
 .skills {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 .skill {
-    max-width: 500px;
+    width: 33.33%;
     margin: 0 auto;
+}
+
+.skill h4 {
+    color: var(--clr-accent);
 }
 
 @media (min-width: 800px) {
     .skills {
         display: flex;
-        max-width: 1000px;
+        max-width: var(--mw-large);
         margin-left: auto;
         margin-right: auto;
     }
 
     .skill + .skill {
-        margin-left: 2em;
+        margin-left: 4em;
     }
 }
 
@@ -350,13 +362,16 @@ header {
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    max-width: 1000px;
+    max-width: var(--mw-large);
     margin: 0 auto;
 }
 
 .portfolio__project {
     background: var(--clr-accent);
     overflow: hidden;
+    text-decoration: none;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .portfolio__img {
@@ -365,21 +380,28 @@ header {
         opacity 250ms linear;
 }
 
-.pofrolio__project:focus {
+.portfolio__project:focus {
     position: relative;
     z-index: 2;
 }
 
 .portfolio__img:hover,
 .portfolio__project:focus .portfolio__img {
-    transform: scale(1.2);
     opacity: .75;
+}
+
+.portfolio__title {
+    margin-top: 1em;
+}
+
+.portfolio__title:hover {
+    color: var(--clr-dark);
 }
 
 /* About Me */
 
 .about-me {
-    max-width: 1000px;
+    max-width: var(--mw-large);
     margin: 0 auto;
 }
 
@@ -467,7 +489,7 @@ header {
 
 .portfolio-item-individual {
     padding: 0 2em 2em;
-    max-width: 1000px;
+    max-width: var(--mw-large);
     margin: 0 auto;
 }
 
